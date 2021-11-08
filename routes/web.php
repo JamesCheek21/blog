@@ -24,9 +24,10 @@ Route::get('posts/{post}', function ($slug) {
         abort(404);
     }
 
-    $post = file_get_contents($path);
-    return view('post', [
-        'post' => $post
-    ]);
+    $post = cache()->remember("posts.{$slug}", now()->addHours(24), function() use ($path) {
+        return file_get_contents($path);
+    });
+
+    return view('post', ['post' => $post]);
 })->where('post', '[A-z_\-]+');
 
