@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         Post::truncate();
         Category::truncate();
 
-        Post::factory(50)->create();
+        Post::factory(60)->create();
     }
 }
