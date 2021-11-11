@@ -13,6 +13,7 @@
                         type="text"
                         name="name"
                         id="name"
+                        value="{{ old('name') }}"
                         required>
                     @error('name')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -28,6 +29,7 @@
                         type="text"
                         name="username"
                         id="username"
+                        value="{{ old('username') }}"
                         required>
                     @error('username')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -43,6 +45,7 @@
                         type="email"
                         name="email"
                         id="email"
+                        value="{{ old('email') }}"
                         required>
                     @error('email')
                         <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
