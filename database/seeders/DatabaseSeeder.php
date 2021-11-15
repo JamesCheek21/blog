@@ -24,6 +24,6 @@ class DatabaseSeeder extends Seeder
         Category::truncate();
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        Post::factory(60)->create();
+        Post::factory(5)->create();
     }
 }
